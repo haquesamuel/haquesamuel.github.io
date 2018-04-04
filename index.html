@@ -161,14 +161,14 @@
 			defPointerUnlockElement.exitPointerLock = defPointerUnlockElement.exitPointerLock ||
 					defPointerUnlockElement.mozExitPointerLock ||
 					defPointerUnlockElement.webkitExitPointerLock;
-			function mainMenuMusic(){
+			/*function mainMenuMusic(){
 			music = new Audio();
 			music.src = "audio/menuMusic.mp3";
 			music.loop = true;
 			music.play();
-			}
+			}*/
 			
-			/*function mainMenuMusic(){
+			function mainMenuMusic(){
 			music = new Audio();
 			music.src = "audio/menuMusic.mp3";
 			music.loop = true;
@@ -190,7 +190,10 @@
 				}
 			}
 
-			window.addEventListener("load", mainMenuMusic);*/
+			window.addEventListener("load", mainMenuMusic);
+		</script>
+		<button id="mutebtn"></button>
+		<script>
 
 
 			function initAudioPlayer(){
