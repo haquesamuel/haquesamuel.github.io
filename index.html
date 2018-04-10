@@ -73,6 +73,14 @@
                      margin-right: auto;  
                      width: 80%;
                }
+            .mutebtn{
+            	/*background:url(images/speaker.png) no-repeat;*/
+            	margin-right: 10%;
+            	margin-bottom: 10%;
+            	position: absolute;
+            	width:30px;
+				height:30px;
+            	}
         .keyboard-instructions{
          	background-color: #2f2f2f;
 				border: 5px #ff1f00 solid;
@@ -84,14 +92,14 @@
 				cursor: pointer;
 				margin-top: 10px;
          }
-      #mutebtn{
+      /*#mutebtn{*/
             	/*background:url(images/speaker.png) no-repeat;*/
-            	margin-right: 10%;
+            	/*margin-right: 10%;
             	margin-bottom: 10%;
-            	position: relative;
+            	position: absolute;
             	width:30px;
 				height:30px;
-            	}
+            	}*/
       #backBtn{
       	width: 30%; 
 				color: #ff1f00; 
@@ -130,12 +138,13 @@
 			<p class="button button-quit" id="quitBtn">Quit</p>
 		</div>
 		<div id="menuScreen">
-			<img src="images/volcanoescape3.png" alt="volcano" height="700">  
+			<img src="images/volcanoescape3.png" alt="volcano" height="700">  	
+			<img src="images/speaker.png" height="700" id="mutebtn" >
             <div id="buttons">
 			<p class="button button-play" id="playBtn">Play</p>		
 			<p class="button button-leaderboard" id="leaderboardBtn">Leaderboard</p>
 			<p class="button button-help" id="helpBtn">Help</p>
-			<img src="images/volcanoescape3.png" height="700" id="mutebtn" >
+
 		</div>	
 		</div>
 		</div>
