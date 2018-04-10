@@ -73,16 +73,20 @@
                      margin-right: auto;  
                      width: 80%;
                }
-           /* #mutebtn{
+            #mutebtn{
+            	/*background:url(images/speaker.png) no-repeat;*/
             	margin-right: 10%;
             	margin-bottom: 10%;
-            	}*/
-            .mutebtn{
+            	position: absolute;
+            	width:30px;
+				height:30px;
+            	}
+         /*   .mutebtn{
 			background:url(images/speaker.png) no-repeat;
 			width:30px;
 			height:30px;
 			margin-bottom: 1%;
-			margin-right: 1%;
+			margin-right: 1%;*/
 
            
         .keyboard-instructions{
@@ -143,9 +147,11 @@
 			<p class="button button-play" id="playBtn">Play</p>		
 			<p class="button button-leaderboard" id="leaderboardBtn">Leaderboard</p>
 			<p class="button button-help" id="helpBtn">Help</p>
-			<p class="button button-mutebtn id="mutebtn"></p>
-
+			<!--<p class="button button-mutebtn id="mutebtn"></p>-->
 		</div>
+		<div id = mutebtn>
+			<img src="images/volcanoescape3.png" >
+		</div>	
 		</div>
 		<div id="score">
 			<p id="scoreText"></p>
