@@ -84,6 +84,14 @@
 				cursor: pointer;
 				margin-top: 10px;
          }
+      #mutebtn{
+            	/*background:url(images/speaker.png) no-repeat;*/
+            	margin-right: 10%;
+            	margin-bottom: 10%;
+            	position: absolute;
+            	width:30px;
+				height:30px;
+            	}
       #backBtn{
       	width: 30%; 
 				color: #ff1f00; 
@@ -128,6 +136,9 @@
 			<p class="button button-leaderboard" id="leaderboardBtn">Leaderboard</p>
 			<p class="button button-help" id="helpBtn">Help</p>
 		</div>
+		<div id = mutebtn>
+			<img src="images/volcanoescape3.png" >
+		</div>	
 		</div>
 		<div id="score">
 			<p id="scoreText"></p>
@@ -164,11 +175,25 @@
 					defPointerUnlockElement.webkitExitPointerLock;
 
 			function mainMenuMusic(){
-			music = new Audio();
-			music.src = "audio/menuMusic.mp3";
-			music.loop = true;
-			music.play();
-			}
+				music = new Audio();
+				music.src = "audio/menuMusic.mp3";
+				music.loop = true;
+				music.play();
+				// Set object references
+				mutebtn = document.getElementById("mutebtn");
+				// Add Event Handling
+				mutebtn.addEventListener("click", mute);
+				// Functions
+				function mute(){
+					if(music.muted){
+					    music.muted = false;
+					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				    } else {
+					    music.muted = true;
+					    mutebtn.style.background = "url(images/muted.png) no-repeat";
+				    }
+				}
+				}
 			window.addEventListener("load", mainMenuMusic);
 		
 			function initAudioPlayer(){
