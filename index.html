@@ -195,9 +195,9 @@
 				mutebtn = document.getElementById("mutebtn");
 				mutebtn.style.background = "url(images/speaker.png) no-repeat";
 				// Add Event Handling
-				mutebtn.addEventListener("click", mute);
+				mutebtn.addEventListener("click", muteMenuMusic);
 				// Functions
-				function mute(){
+				function muteMenuMusic(){
 					if(music.muted){
 					    music.muted = false;
 					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
@@ -216,6 +216,16 @@
 			audio.src = "audio/gameplayMusic.mp3";
 			audio.loop = true;
 			audio.play();
+			mutebtn.addEventListener("click", muteGameplayMusic);
+			function muteGameplayMusic(){
+					if(audio.muted){
+					    audio.muted = false;
+					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				    } else {
+					    audio.muted = true;
+					    mutebtn.style.background = "url(images/muted.png) no-repeat";
+				    }
+				}
 			}
 
 			function switchTrack(){
