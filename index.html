@@ -233,14 +233,13 @@
 
 			function switchTrack(){
 			audio.muted=true;
-			if (wantsToPlayMusic==true){
-				music.muted=false;
-				}
+			music.muted=false;
 			}
             playbtn = document.getElementById("playBtn");
 			playbtn.addEventListener("click", initAudioPlayer);
 			quitbtn = document.getElementById("quitBtn");
 			quitbtn.addEventListener("click", switchTrack);
+			}
 
             document.addEventListener("click", (e) => {
 				
