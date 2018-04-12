@@ -203,6 +203,7 @@
 					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
 				    } else {
 					    music.muted = true;
+					    wantsToPlayMusic = false;
 					    mutebtn.style.background = "url(images/muted.png) no-repeat";
 				    }
 				}
@@ -222,10 +223,9 @@
 					if(audio.muted){
 					    audio.muted = false;
 					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
-					    wantsToPlayMusic = false;
 				    } else {
 					    audio.muted = true;	
-					    wantsToPlayMusic = true;
+					    wantsToPlayMusic = false;
 					    mutebtn.style.background = "url(images/muted.png) no-repeat";
 				    }
 				}
