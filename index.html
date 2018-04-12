@@ -222,6 +222,7 @@
 					if(audio.muted){
 					    audio.muted = false;
 					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+					    wantsToPlayMusic = true;
 				    } else {
 					    audio.muted = true;	
 					    wantsToPlayMusic = false;
@@ -232,7 +233,7 @@
 
 			function switchTrack(){
 			audio.muted=true;
-			if (wantsToPlayMusic=true){
+			if (wantsToPlayMusic==true){
 				music.muted=false;
 				}
 			}
