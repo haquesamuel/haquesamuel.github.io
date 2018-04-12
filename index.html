@@ -232,11 +232,13 @@
 			}
 
 			function switchTrack(){
-			audio.muted=true;
-			music.muted=false;
+			audio.muted=false;
+			music.muted=true;
 			}
-			
+
             playbtn = document.getElementById("playBtn");
+            			playbtn.addEventListener("click", switchTrack);
+
 			if(wantsToPlayMusic==true){
 			playbtn.addEventListener("click", initAudioPlayer);
 			}
