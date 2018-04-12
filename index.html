@@ -264,8 +264,12 @@
 
             playbtn = document.getElementById("playBtn");
 			quitbtn = document.getElementById("quitBtn");
+
+
+
+			
 			//if(wantsToPlayMusic==true){
-			playbtn.addEventListener("click", initAudioPlayer);
+			playbtn.addEventListener("click", muteGameplayMusic);
 			//}
 			playbtn.addEventListener("click", switchTrack);
 			quitbtn.addEventListener("click", switchTrack);
@@ -285,7 +289,7 @@
 
 
 
-			
+
 
             document.addEventListener("click", (e) => {
 				
