@@ -236,7 +236,9 @@
 			music.muted=false;
 			}
             playbtn = document.getElementById("playBtn");
+			if(wantsToPlayMusic==true){
 			playbtn.addEventListener("click", initAudioPlayer);
+			}
 			quitbtn = document.getElementById("quitBtn");
 			if (wantsToPlayMusic==true){
 			quitbtn.addEventListener("click", switchTrack);
