@@ -229,6 +229,7 @@
 
 			mutebtn.addEventListener("click", muteGameplayMusic);
 
+<<<<<<< HEAD
 			function muteGameplayMusic(){
 				if(audio.muted){
 				    audio.muted = false;
@@ -236,10 +237,21 @@
 				} else {
 				    audio.muted = true;
 				    mutebtn.style.background = "url(images/muted.png) no-repeat";
+=======
+					if(audio.muted){
+					    audio.muted = false;
+					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				    } else {
+					    audio.muted = true;	
+					    wantsToPlayMusic = false;
+					    mutebtn.style.background = "url(images/muted.png) no-repeat";
+				    }
+>>>>>>> parent of 555cd83... gyugy
 				}
 			}
 			
 
+<<<<<<< HEAD
 
 			function switchTrack{
 				if (audio.muted){
@@ -249,6 +261,12 @@
 				else{
 					audio.muted=true;
 					music.muted=false;
+=======
+			function switchTrack(){
+			audio.muted=true;
+			if (wantsToPlayMusic=true){
+				music.muted=false;
+>>>>>>> parent of 555cd83... gyugy
 				}
 			}
 
