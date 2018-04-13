@@ -74,7 +74,7 @@
                      width: 80%;
                }
         .keyboard-instructions{
-         	background-color: #2f2f2f;
+         		background-color: #2f2f2f;
 				border: 5px #ff1f00 solid;
 				width: 30%; 
 				color: #ff1f00; 
@@ -84,6 +84,13 @@
 				cursor: pointer;
 				margin-top: 10px;
          }
+      #muteBtn{
+      			right: 20px;
+            	bottom: 0px;
+            	position: absolute;
+            	width:50px;
+				height:50px;
+      }
       #backBtn{
       	width: 30%; 
 				color: #ff1f00; 
@@ -122,7 +129,8 @@
 			<p class="button button-quit" id="quitBtn">Quit</p>
 		</div>
 		<div id="menuScreen">
-			<img src="images/volcanoescape3.png" alt="volcano" height="700">  
+			<img src="images/volcanoescape3.png" alt="volcano" height="700">
+			<div id = "muteBtn"></div>  
             <div id="buttons">
 			<p class="button button-play" id="playBtn">Play</p>		
 			<p class="button button-leaderboard" id="leaderboardBtn">Leaderboard</p>
@@ -135,7 +143,7 @@
 		<script>
 			(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 			var box9, box8, box7, box10, floor, floor2;
-			var audio, playbtn, music, pausebtn;
+			var audio, playbtn, music, pausebtn, mutebtn;
 			var rockObject;
 			var camera, scene, renderer, controls;
 			var gamePause;
@@ -163,8 +171,11 @@
 			music.src = "audio/menuMusic.mp3";
 			music.loop = true;
 			music.play();
+			mutebtn = document.getElementById("muteBtn");
 			}
 			window.addEventListener("load", mainMenuMusic);
+			mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				mutebtn.addEventListener("click", muteMenuMusic);
 		
 			function initAudioPlayer(){
 			music.muted=true;
