@@ -104,11 +104,11 @@
 		</style>
 	</head>
 	<body>
-    	<video id="myVideo" width="320" height="240">
+    	<video id="myVideo" width="1280" height="720">
       	<source src="loading.mp4" type="video/mp4">
       	</video>
 
-    	<div id="videoEnd" style="display:none">Video end</div>
+    	<div id="videoEnd" style="display:none"></div>
 
     	<script>
         document.getElementById('myVideo').addEventListener('ended',myHandler,false);
@@ -118,6 +118,7 @@
             document.getElementById('myVideo').style.display="none";
             document.getElementById('videoEnd').style.display="block";
         }
+
     	</script>
 		<script src="js/three.js"></script>
 		<script src="js/controls/controls.js"></script>
