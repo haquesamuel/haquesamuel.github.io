@@ -239,11 +239,11 @@
             playbtn = document.getElementById("playBtn");
             			playbtn.addEventListener("click", switchTrack);
 
-			//if(wantsToPlayMusic==true){
-			//playbtn.addEventListener("click", initAudioPlayer);
-			//}
-			//quitbtn = document.getElementById("quitBtn");
-			//quitbtn.addEventListener("click", switchTrack);
+			if(wantsToPlayMusic==true){
+			playbtn.addEventListener("click", initAudioPlayer);
+			}
+			quitbtn = document.getElementById("quitBtn");
+			quitbtn.addEventListener("click", switchTrack);
 			
 
             document.addEventListener("click", (e) => {
