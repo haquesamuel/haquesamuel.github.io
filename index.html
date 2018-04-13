@@ -73,8 +73,8 @@
                      margin-right: auto;  
                      width: 80%;
                }
-             #muteBtn{
-            	/*background:url(images/speaker.png) no-repeat;*/
+             #mutebtn{
+            	background:url(images/speaker.png) no-repeat;
             	right: 20px;
             	bottom: 0px;
             	position: absolute;
@@ -134,7 +134,7 @@
 		</div>
 		<div id="menuScreen">
 			<img src="images/volcanoescape3.png" alt="volcano" height="700">  
-			<div id="muteBtn"></div>
+			<div id="mutebtn" ></div>
             <div id="buttons">
 			<p class="button button-play" id="playBtn">Play</p>		
 			<p class="button button-leaderboard" id="leaderboardBtn">Leaderboard</p>
@@ -184,6 +184,7 @@
 				music.loop = true;
 				music.play();
 				// Set object references
+				mutebtn = document.getElementById("mutebtn");
 				mutebtn.style.background = "url(images/speaker.png) no-repeat";
 				// Add Event Handling
 				mutebtn.addEventListener("click", mute);
