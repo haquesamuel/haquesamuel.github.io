@@ -222,10 +222,10 @@
 					if(audio.muted){
 					    audio.muted = false;
 					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
-					    wantsToPlayMusic = false;
+					    wantsToPlayMusic = true;
 				    } else {
 					    audio.muted = true;	
-					    wantsToPlayMusic = true;
+					    wantsToPlayMusic = false;
 					    mutebtn.style.background = "url(images/muted.png) no-repeat";
 				    }
 				}
