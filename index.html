@@ -159,11 +159,7 @@
 			(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 
 			var box9, box8, box7, box10, floor, floor2;
-<<<<<<< HEAD
 			var audio, playbtn, menuMusic, pausebtn;
-=======
-			var audio, playbtn, music, pausebtn;
->>>>>>> parent of 2b09427... dw
 			var rockObject;
 			var camera, scene, renderer, controls;
 			var gamePause;
@@ -235,7 +231,6 @@
 
 
 			function muteGameplayMusic(){
-<<<<<<< HEAD
 				if(audio.muted){
 				    audio.muted = false;
 				    mutebtn.style.background = "url(images/speaker.png) no-repeat";
@@ -243,13 +238,12 @@
 				    audio.muted = true;
 				    mutebtn.style.background = "url(images/muted.png) no-repeat";
 
-=======
->>>>>>> parent of 2b09427... dw
 					if(audio.muted){
 					    audio.muted = false;
 					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
 				    } else {
-					    audio.muted = true;
+					    audio.muted = true;	
+					    wantsToPlayMusic = false;
 					    mutebtn.style.background = "url(images/muted.png) no-repeat";
 				    }
 
@@ -270,14 +264,10 @@
 
 			function switchTrack(){
 			audio.muted=true;
-<<<<<<< HEAD
 			if (wantsToPlayMusic=true){
 				music.muted=false;
 
 				}
-=======
-			music.muted=false;
->>>>>>> parent of 2b09427... dw
 			}
 
 			/*function switchTrack(){
