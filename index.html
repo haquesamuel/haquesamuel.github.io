@@ -186,73 +186,50 @@
 					defPointerUnlockElement.mozExitPointerLock ||
 					defPointerUnlockElement.webkitExitPointerLock;
 
-			function mainMenuMusic()
-			{
-				menuMusic = new Audio();
-				menuMusic.src = "audio/menuMusic.mp3";
-				menuMusic.loop = true;
-				menuMusic.play();
+			function mainMenuMusic(){
+				music = new Audio();
+				music.src = "audio/menuMusic.mp3";
+				music.loop = true;
+				music.play();
 				// Set object references
 				mutebtn = document.getElementById("mutebtn");
-				//mutebtn.style.background = "url(images/speaker.png) no-repeat";
-				// Add Event Handling
-				//mutebtn.addEventListener("click", muteMenuMusic);
-				// Functions
-			}
-
 				mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				// Add Event Handling
 				mutebtn.addEventListener("click", muteMenuMusic);
-
-			function muteMenuMusic()
-			{
-				if(menuMusic.muted){
-				    menuMusic.muted = false;
-				    mutebtn.style.background = "url(images/speaker.png) no-repeat";
-			    }
-			    else {
-					menuMusic.muted = true;
-				    wantsToPlayMusic = false;
-				    mutebtn.style.background = "url(images/muted.png) no-repeat";
-			    }
-			}
-				
+				// Functions
+				function muteMenuMusic(){
+					if(music.muted){
+					    music.muted = false;
+					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				    } else {
+					    music.muted = true;
+					    wantsToPlayMusic = false;
+					    mutebtn.style.background = "url(images/muted.png) no-repeat";
+				    }
+				}
+				}
 			window.addEventListener("load", mainMenuMusic);
-
+			
 		
-			function playGameplayMusic()
-			{
+			function initAudioPlayer(){
+			music.muted=true;
 			audio = new Audio();
 			audio.src = "audio/gameplayMusic.mp3";
 			audio.loop = true;
 			audio.play();
-			}
-
 			mutebtn.addEventListener("click", muteGameplayMusic);
-
 			function muteGameplayMusic(){
-				if(audio.muted){
-				    audio.muted = false;
-				    mutebtn.style.background = "url(images/speaker.png) no-repeat";
-				} else {
-				    audio.muted = true;
-				    mutebtn.style.background = "url(images/muted.png) no-repeat";
-				}
-			}
-			
-
-
-			function switchTrack{
-				if (audio.muted){
-					audio.muted=false;
-					music.muted=true;
-				}
-				else{
-					audio.muted=true;
-					music.muted=false;
+					if(audio.muted){
+					    audio.muted = false;
+					    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				    } else {
+					    audio.muted = true;
+					    mutebtn.style.background = "url(images/muted.png) no-repeat";
+				    }
 				}
 			}
 
-			/*function switchTrack(){
+			function switchTrack(){
 
 			audio.muted=false;
 			music.muted=true;
@@ -260,31 +237,16 @@
 			audio.muted=true;
 			music.muted=false;
 
-			}*/
+			}
 
             playbtn = document.getElementById("playBtn");
-			quitbtn = document.getElementById("quitBtn");
+            			playbtn.addEventListener("click", switchTrack);
+
 			//if(wantsToPlayMusic==true){
 			playbtn.addEventListener("click", initAudioPlayer);
 			//}
-			playbtn.addEventListener("click", switchTrack);
+			quitbtn = document.getElementById("quitBtn");
 			quitbtn.addEventListener("click", switchTrack);
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			
 
             document.addEventListener("click", (e) => {
