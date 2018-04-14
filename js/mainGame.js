@@ -27,7 +27,7 @@
 					defPointerUnlockElement.webkitExitPointerLock;
 			
 
- 			setTimeout(hideDiv, 11000);
+ 			setTimeout(hideDiv, 3000);
             function hideDiv() {
                 document.getElementById("loadingScreen").style.display="none";    
             }
