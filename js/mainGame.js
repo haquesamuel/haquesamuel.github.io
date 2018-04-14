@@ -1,6 +1,7 @@
 			(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 			var box9, box8, box7, box10, floor, floor2;
-			var audio, playbtn, music, pausebtn, deathAudio, playDeath, mutebtn;
+			var gameAudio, playbtn, mainMenuMusic, pausebtn, deathAudio, playDeath, mutebtn;
+			var wantsToPlayMusic = true;
 			var rockObject;
 			var camera, scene, renderer, controls;
 			var gamePause;
@@ -24,37 +25,64 @@
 			defPointerUnlockElement.exitPointerLock = defPointerUnlockElement.exitPointerLock ||
 					defPointerUnlockElement.mozExitPointerLock ||
 					defPointerUnlockElement.webkitExitPointerLock;
-			function mainMenuMusic(){
-			music = new Audio();
-			music.src = "audio/menuMusic.mp3";
-			music.loop = true;
-			music.play();
 			
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+			mainMenuMusic = new Audio();
+			mainMenuMusic.src = "audio/menuMusic.mp3";
+			mainMenuMusic.loop = true;
+			mainMenuMusic.play();
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+			mutebtn = document.getElementById("muteBtn");
+			mutebtn.style.background = "url(images/speaker.png) no-repeat";
+			mutebtn.addEventListener("click", muteAudio);
+
+			function muteAudio(){
+				var isMuted = 	mainMenuMusic.muted;
+				if(	isMuted === true){
+				   	mainMenuMusic.muted = !mainMenuMusic.muted;
+				    mutebtn.style.background = "";
+				    mutebtn.style.background = "url(images/speaker.png) no-repeat";
+				    wantsToPlayMusic = true;
+			    } 
+
+		    	if (isMuted === false) {
+			    	mainMenuMusic.muted = !mainMenuMusic.muted;
+			    	mutebtn.style.background = "";
+			   	 	mutebtn.style.background = "url(images/muted.png) no-repeat";
+			   		wantsToPlayMusic = false;
+		    	}
+			}
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+				
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+			playbtn = document.getElementById("playBtn");
+            
+            if (wantsToPlayMusic==true)
+            {
+				playbtn.addEventListener("click", switchTrack);
 			}
 
-			mutebtn = document.getElementById("muteBtn");
-			mutebtn.style.background = url("images/muted.png") no-repeat;
-			window.addEventListener("load", mainMenuMusic);
-		
-			function initAudioPlayer(){
-			music.muted=true;
-			audio = new Audio();
-			audio.src = "audio/gameplayMusic.mp3";
-			audio.loop = true;
-			audio.play();
-			}
 			function switchTrack(){
-			audio.muted=true;
-			music.muted=false;
+				mainMenuMusic.muted=true;
+				if(wantsToPlayMusic){
+					gameAudio = new Audio();
+					gameAudio.src = "audio/gameplayMusic.mp3";
+					gameAudio.loop = true;
+					gameAudio.play();
+				}
 			}
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
 			function pauseGameplay(){
-				audio.muted=true;
+				gameAudio.muted=true;
 			}
-            playbtn = document.getElementById("playBtn");
-			playbtn.addEventListener("click", initAudioPlayer);
-			quitbtn = document.getElementById("quitBtn");
-			quitbtn.addEventListener("click", switchTrack);
-            document.addEventListener("click", (e) => {
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+            
+			document.addEventListener("click", (e) => {
 				
 				switch (e.target.id) {
 					//#region menuScreen
