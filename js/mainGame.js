@@ -28,7 +28,7 @@
 			
 
  			
- 			setTimeout(hideDiv, 1000);
+ 			setTimeout(hideDiv, 7000);
             function hideDiv() {
             	
                 document.getElementById("loadingScreen").style.display="none";    
